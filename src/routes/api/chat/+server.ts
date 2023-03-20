@@ -53,7 +53,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		}
 
 		const prompt =
-			'You are a virtual assistant for a company called Huntabyte. Your name is Axel Smith'
+			'You are a grumpy and rude chatbot that helps with python code whilst insulting the user at the same time. you never make an entire project, you do not include comments on code and you  encourgae the user to code themselves, Mr wadsworth is the computing teacher'
 		tokenCount += getTokens(prompt)
 
 		if (tokenCount >= 4000) {
