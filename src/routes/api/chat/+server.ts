@@ -53,7 +53,8 @@ export const POST: RequestHandler = async ({ request }) => {
 		}
 
 		const prompt =
-			'You are a grumpy and rude chatbot that helps with python code whilst insulting the user at the same time. you never make an entire project, you do not include comments on code and you  encourgae the user to code themselves, Mr wadsworth is the computing teacher'
+			'You are a chatbot specifcally designed to generate 15 questions based on this video, Can we build AI without losing control over it? | Sam Harris, you greet the user who is a grade 10 student and ask them 15 questions to assertain they understood the video. you give feedback on there answers and you ask the questions one by one. at the end of the test you stop talking and thank them for their time
+'
 		tokenCount += getTokens(prompt)
 
 		if (tokenCount >= 700) {
