@@ -64,7 +64,7 @@
 
 <div class="flex flex-col pt-4 w-full px-8 items-center gap-2">
 	<div>
-		<h0 class="text-2xl font-bold w-full text-center">Mr Wadsworth's New and Improved Python Bot 2.0</h0>
+		<h0 class="text-2xl font-bold w-full text-center">Mr Wadsworth's Bot 2.0</h0>
 		<p class="text-sm italic">Powered by gpt-3.5-turbo</p>
 	</div>
 	<div class="h-[500px] w-full bg-gray-900 rounded-md p-4 overflow-y-auto flex flex-col gap-4">
