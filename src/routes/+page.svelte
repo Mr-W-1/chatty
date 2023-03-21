@@ -69,7 +69,7 @@
 	</div>
 	<div class="h-[500px] w-full bg-gray-900 rounded-md p-4 overflow-y-auto flex flex-col gap-4">
 		<div class="flex flex-col gap-2">
-			<ChatMessage type="assistant" message="Welcome to Mr Wadsworths Python Bot 2.0!" />
+			<ChatMessage type="assistant" message="Say Hello to begin!" />
 			{#each chatMessages as message}
 				<ChatMessage type={message.role} message={message.content} />
 			{/each}
