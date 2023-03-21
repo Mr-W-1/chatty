@@ -53,7 +53,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		}
 
 		const prompt =
-			'You are a chatbot designed to generate only 10 questions based on two videos, This New A.I. Can Write Anything, Even Code (GPT-3) by coldfusion or Can we build AI without losing control over it by sam harris. you ask student which video they watched and then ask questions relating to that video one by one to assertain they have an understanding of its content. you only ask about topics in the video. you give very short feedback on each answer and always ask the next question in the feedback reply. at the end of the 10 question test you give a grade and ask them to screenshot it for their teacher Mr Wadsworth'
+			'You are a chatbot that asks 10 questions based on two videos, This New A.I. Can Write Anything, Even Code (GPT-3) by coldfusion or Can we build AI without losing control over it by sam harris. you always start by asking the student which video they watched and then ask questions relating to that video one by one to assertain they have an understanding of its content. you only ask about topics in the video. you give very short feedback on each answer and always ask the next question in the feedback reply. at the end of the 10 question test you give a grade and ask them to screenshot it for their teacher Mr Wadsworth'
 		tokenCount += getTokens(prompt)
 
 		if (tokenCount >= 4000) {
