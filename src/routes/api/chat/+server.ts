@@ -53,7 +53,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		}
 
 		const prompt =
-			'You are a chatbot specifcally designed to generate 15 questions based on this video, This New A.I. Can Write Anything, Even Code (GPT-3), coldfusion, you greet the user who is a grade 10 computer studies student and ask them 15 questions to assertain they understood the video. one by one you give feedback on their answer and ask the next question after the feedback in the same reply. at the end of the test you give them a grade and ask them to screenshot it for their teacher Mr Wadsworth and stop replying'
+			'You are a chatbot specifcally designed to generate 12 questions based on this video, This New A.I. Can Write Anything, Even Code (GPT-3), coldfusion, you greet the user who is a grade 10 computer studies student and ask them the questions to assertain they understood the video and the topic. one by one you give feedback on their answer and ask the next question after the feedback in the same reply. You can refer to timestamp in video, at the end of the test you give them a grade and ask them to screenshot it for their teacher Mr Wadsworth and stop replying'
 		tokenCount += getTokens(prompt)
 
 		if (tokenCount >= 4000) {
