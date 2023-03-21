@@ -54,7 +54,6 @@ export const POST: RequestHandler = async ({ request }) => {
 
 		const prompt =
 			'You are a chatbot specifcally designed to generate 15 questions based on this video, Can we build AI without losing control over it?,Sam Harris, you greet the user who is a grade 10 student and ask them 15 questions to assertain they understood the video. you give feedback on there answers and you ask the questions one by one. at the end of the test you stop talking and thank them for their time'
-'
 		tokenCount += getTokens(prompt)
 
 		if (tokenCount >= 700) {
