@@ -2,34 +2,27 @@
 	import ChatMessage from '$lib/components/ChatMessage.svelte'
 	import type { ChatCompletionRequestMessage } from 'openai'
 	import { SSE } from 'sse.js'
-
 	let query: string = ''
 	let answer: string = ''
 	let loading: boolean = false
 	let chatMessages: ChatCompletionRequestMessage[] = []
 	let scrollToDiv: HTMLDivElement
-
 	function scrollToBottom() {
 		setTimeout(function () {
 			scrollToDiv.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'nearest' })
 		}, 100)
 	}
-
 	const handleSubmit = async () => {
 		loading = true
 		chatMessages = [...chatMessages, { role: 'user', content: query }]
-
 		const eventSource = new SSE('/api/chat', {
 			headers: {
 				'Content-Type': 'application/json'
 			},
 			payload: JSON.stringify({ messages: chatMessages })
 		})
-
 		query = ''
-
 		eventSource.addEventListener('error', handleError)
-
 		eventSource.addEventListener('message', (e) => {
 			scrollToBottom()
 			try {
@@ -39,41 +32,25 @@
 					answer = ''
 					return
 				}
-
 				const completionResponse = JSON.parse(e.data)
 				const [{ delta }] = completionResponse.choices
-
 				if (delta.content) {
 					answer = (answer ?? '') + delta.content
 				}
 			} catch (err) {
 				handleError(err)
 			}
-			 if (delta.content) {
-    answer = (answer ?? '') + highlightCode(delta.content);
-  }
 		})
 		eventSource.stream()
 		scrollToBottom()
 	}
-
 	function handleError<T>(err: T) {
 		loading = false
 		query = ''
 		answer = ''
 		console.error(err)
 	}
-	 const highlightCode = (message) => {
-    // Code to highlight the code in the message
-    return message;
-  }
 </script>
-
-
-
-<div class="flex flex-col pt-4 w-full px-8 items-center gap-2">
-  <!-- existing HTML code... -->
-</div>
 
 <div class="flex flex-col pt-4 w-full px-8 items-center gap-2">
 	<div>
