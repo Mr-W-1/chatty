@@ -49,6 +49,9 @@
 			} catch (err) {
 				handleError(err)
 			}
+			 if (delta.content) {
+    answer = (answer ?? '') + highlightCode(delta.content);
+  }
 		})
 		eventSource.stream()
 		scrollToBottom()
@@ -61,6 +64,17 @@
 		console.error(err)
 	}
 </script>
+
+<script>
+  const highlightCode = (message) => {
+    // Code to highlight the code in the message
+    return message;
+  }
+</script>
+
+<div class="flex flex-col pt-4 w-full px-8 items-center gap-2">
+  <!-- existing HTML code... -->
+</div>
 
 <div class="flex flex-col pt-4 w-full px-8 items-center gap-2">
 	<div>
