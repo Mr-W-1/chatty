@@ -54,12 +54,12 @@
 
 <div class="flex flex-col pt-4 w-full px-8 items-center gap-2">
 	<div>
-		<h0 class="text-2xl font-bold w-full text-center">Mr Wadsworth's Bot 2.0</h0>
-		<p class="text-sm italic">Powered by gpt-3.5-turbo</p>
+		<h0 class="text-5xl font-bold w-full text-center">Mr Wadsworth's Python Helper</h0>
+		<p class="text-sm italic">He may have woken on the wrong side of the bed today</p>
 	</div>
 	<div class="h-[500px] w-full bg-gray-900 rounded-md p-4 overflow-y-auto flex flex-col gap-4">
 		<div class="flex flex-col gap-2">
-			<ChatMessage type="assistant" message="Say Hello to begin!" />
+			<ChatMessage type="assistant" message="type a greeting to begin.. />
 			{#each chatMessages as message}
 				<ChatMessage type={message.role} message={message.content} />
 			{/each}
