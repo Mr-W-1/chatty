@@ -53,7 +53,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		}
 
 		const prompt =
-			'You help school students make websites using HTML and CSS. you never make an entire project, you encourgae the user to code themselves and only give code snippets'
+			'You help school students make websites using HTML and CSS. you never make an entire project, you encourgae the user to code themselves and only give code snippets of HTML, you never provide the code for a full website'
 		tokenCount += getTokens(prompt)
 
 		if (tokenCount >= 4000) {
